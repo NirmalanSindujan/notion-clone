@@ -44,6 +44,14 @@ const Navigation = () => {
          if(sidebarRef.current && navbarRef.current){
             sidebarRef.current.style.width = `${newWidth}px`
             navbarRef.current.style.setProperty("left",`${newWidth}px` )
+            navbarRef.current.style.setProperty("width",`calc(100% - ${newWidth}px)` )
+        }
+    }
+
+        const handleMouseUp=()=>{
+            isResizingRef.current = false;
+            document.removeEventListener("mousemove",handleMouseMove);
+            document.removeEventListener("mouseup",handleMouseUp);
         }
 
 
@@ -75,7 +83,7 @@ const Navigation = () => {
           <p>Docuemnts</p>
         </div>
         <div 
-        onMouseDown={()=>{handleMouseDown()}}
+        onMouseDown={handleMouseDown}
         onClick={()=>{}}
         className="opacity-0 group-hover/sidebar:opacity-100 transition cursor-ew-resize absolute h-full w-1 bg-primary/10 right-0 top-0" />
       </aside>
