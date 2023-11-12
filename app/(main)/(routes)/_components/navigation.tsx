@@ -124,7 +124,9 @@ const Navigation = () => {
          <UserItem />
          <Item onClick={()=>{}} label ="New Page" icon={PlusCircle}/>
         </div>
-        
+        <div>
+          Test
+        </div>
 
         <div className="mt-4">
           {documents?.map((document)=>(
