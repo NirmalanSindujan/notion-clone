@@ -57,11 +57,11 @@ const DocumentList = ({
         <p style={{paddingLeft : level ? `${level * 25}px` : undefined}}
         className={cn("hidden text-sm font-medium text-muted-foreground/80",
         expanded && "last:block",
-        level === 0 && "hidden")}
+        level === 0 && "hiddena")}
         >
             No Pages inside
         </p>
-        {documents.map((document)=>{
+        {documents.map((document)=>(
             <div key={document._id}>
                 <Item
                     id={document._id}
@@ -83,7 +83,7 @@ const DocumentList = ({
             />
     )}
             </div>
-        })}
+        ))}
     </>
   )
 }
