@@ -100,7 +100,7 @@ export const Item = ({
         >
           <span className="text-xs">CMD</span>K
         </kbd>
-      )}
+      )} 
       {!!id && (
         <div className="ml-auto flex items-center gap-x-2 pr-2">
           <DropdownMenu>
