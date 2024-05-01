@@ -12,7 +12,7 @@ export const archive = mutation({
         if(!identity){
             throw new Error("Not Authenticated")
         }
-
+ 
         const userId = identity.subject;
 
         const existingDocument = await ctx.db.get(args.id)
