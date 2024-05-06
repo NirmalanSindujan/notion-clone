@@ -56,37 +56,36 @@ export const SearchCommand = () =>{
             open={isOpen}
             onOpenChange={onClose}>
                 <CommandInput placeholder={`Search ${user?.fullName}'s Jotion`}   />
-
+        <CommandList>
                 <CommandEmpty>
                     No Results Found
                 </CommandEmpty>
 
                 <CommandGroup heading = "Documents">
                     { documents?.map((document)=>(
-                        <div>
-                             {document.title}
-                        </div>
-                        // <CommandItem key={document._id}
-                        // value={`${document._id}- ${document.title}`}
-                        // title = {document.title}
-                        // onSelect={onSelect}
-                        // >
-                        //     {  
-                        //         document.icon ? (
-                        //             <p className="mr-2 text-[18px]">
-                        //                 {document.icon}
-                        //                 </p>
-                        //         ):(
-                        //             <File className="mr-2 h-4 w-4" />
-                        //         )
-                        //     }
-                        //     <span>
-                        //         {document.title}
-                        //     </span>
-                        // </CommandItem>
+                    
+                        <CommandItem key={document._id}
+                        value={`${document._id}- ${document.title}`}
+                        title = {document.title}
+                        onSelect={onSelect}
+                        >
+                            {  
+                                document.icon ? (
+                                    <p className="mr-2 text-[18px]">
+                                        {document.icon}
+                                        </p>
+                                ):(
+                                    <File className="mr-2 h-4 w-4" />
+                                )
+                            }
+                            <span>
+                                {document.title}
+                            </span>
+                        </CommandItem>
                     ))}
                 </CommandGroup>
+                </CommandList>
             </CommandDialog>
     )
 
-}
+}//4.42
