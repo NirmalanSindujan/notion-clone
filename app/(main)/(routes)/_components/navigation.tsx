@@ -22,10 +22,15 @@ import DocumentList from "./document-list";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { TrashBox } from "./trash-box";
 
+import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
+
 const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width : 768px)");
 
+  const settings = useSettings();
+  const search = useSearch()
   const create = useMutation(api.documents.create);
   const isResizingRef = useRef(false);
   const sidebarRef = useRef<ElementRef<"aside">>(null);
@@ -135,9 +140,9 @@ const Navigation = () => {
 
         <div>
           <UserItem />
-          <Item onClick={() => {}} label="Search" isSearch icon={Search} />
+          <Item label="Search" isSearch icon={Search} onClick ={search.onOpen} />
 
-          <Item onClick={() => {}} label="Settings" icon={Settings} />
+          <Item onClick={settings.onOpen} label="Settings" icon={Settings} />
 
           <Item onClick={handleCreate} label="New Page" icon={PlusCircle} />
         </div>
