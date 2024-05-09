@@ -1,16 +1,26 @@
 "use client"
 
+import { Doc, Id } from "@/convex/_generated/dataModel"
 
 
-interface ToolbarProps :{
-    
+
+interface ToolbarProps {
+initialData : Doc<"documents">
+preview ? : boolean
 }
 
-export const Toolbar =() =>{
+export const Toolbar =({
+    initialData,
+    preview
+}: ToolbarProps) =>{
 
     return(
-        <div>
-            Toolbar
+        <div className="pl-[54px] group relative">
+          {!!initialData.icon && !preview && (
+            <div className="flex items-center gap-x-2 group/icon pt-6">
+
+                </div>
+          )}
         </div>
     )
 }
