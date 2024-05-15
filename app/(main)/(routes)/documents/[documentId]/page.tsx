@@ -38,7 +38,7 @@ const DocumentIdPage = ({
            </div>
         </div>
         )
-    }
+    } 
 
     if(document === null){
         return(
