@@ -2,6 +2,7 @@
 
 import { Cover } from "@/components/cover"
 import Toolbar from "@/components/toolbar"
+import { Editor } from "@/components/ui/editor"
 import { Skeleton } from "@/components/ui/skeleton"
 import { api } from "@/convex/_generated/api"
 import { Id } from "@/convex/_generated/dataModel"
@@ -54,6 +55,10 @@ const DocumentIdPage = ({
            <Cover url = {document.coverImage}/>
             <div className="md:max-w-3xl lg:max-w-5xl mx-auto">
             <Toolbar initialData = {document} /> 
+
+            <Editor onChange={()=>{}}
+            initialContent = {document.content}
+            />
             </div>
            
         </div>
