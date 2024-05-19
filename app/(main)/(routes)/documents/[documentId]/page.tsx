@@ -2,7 +2,9 @@
 
 import { Cover } from "@/components/cover"
 import Toolbar from "@/components/toolbar"
-import { Editor } from "@/components/ui/editor"
+import dynamic from "next/dynamic"
+import { useMemo } from "react"
+import  Editor  from "@/components/ui/editor"
 import { Skeleton } from "@/components/ui/skeleton"
 import { api } from "@/convex/_generated/api"
 import { Id } from "@/convex/_generated/dataModel"
@@ -19,6 +21,8 @@ const DocumentIdPage = ({
     params
 } : DocumentIdPageInterface) =>{
 
+
+    const Editor = useMemo(()=> dynamic(()=> import("@/components/ui/editor"),{ssr: false}),[])
     const document = useQuery(api.documents.getById,{
         documentId : params.documentId
     })
