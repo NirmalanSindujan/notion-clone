@@ -21,7 +21,7 @@ const Error = () => {
                 <Link href={"/documents"}>
                 Go back
                 </Link>
-            </Button>
+            </Button> 
         </div>
      );
 }
