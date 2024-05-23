@@ -7,7 +7,7 @@ import { ConvexClientProvider } from "@/components/providers/convex-providers";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { EdgeStoreProvider } from "@/lib/edgeStore";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'], display: 'swap', adjustFontFallback: false})
 
 export const metadata: Metadata = {
   title: "Notion Clone By Sindujan",
