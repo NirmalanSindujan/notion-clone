@@ -17,7 +17,7 @@ export const Heading = () => {
         Your Ideas,Documents, & Plans. Unified{" "}
       </h1>
       <h3 className="text-base sm:text-xl md:text-2xl font-medium">
-        Jotion is the Connecte workspace where <br></br> better,faster happens
+        Jotion is the Connecte workspace  where <br></br> better,faster happens
       </h3>
 
       {isLoading && (
