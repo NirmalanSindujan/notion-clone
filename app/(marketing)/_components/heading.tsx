@@ -40,7 +40,7 @@ export const Heading = () => {
         <Button>
             Get Jotion Free
           <ArrowRight className="h-4 w-4 ml-2" />
-
+ 
         </Button>
     </SignInButton>
 )}
